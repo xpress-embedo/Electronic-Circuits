@@ -7,13 +7,13 @@ A constraint i.e. −Vs < Vout < +Vs may result in clipping of peaks of an outpu
 
 ## OP-AMP as Inverting Amplifier  
 The following is the schematic of the OP-Amp working as Inverting Amplifier. The gain of the OP-Amp is ```Av = -Rf/R1``` which in below case is -10.  
-![Schematic](Support\\OP-AMP_As_Inverting_Amplifier.png)  
+![Schematic](Support/OP-AMP_As_Inverting_Amplifier.png)  
 
 And as can be seen in the below waveform, the input voltage peak is 1V and it's output voltage peek is -10V
-![Waveform](Support\\OP-AMP_As_Inverting_Amplifier_Waveform.png)  
+![Waveform](Support/OP-AMP_As_Inverting_Amplifier_Waveform.png)  
 
 Op-Amp can only amplify the signals to a level within the range of supply voltage, so now if the signal is changed to 5V, the output of -50V is not possible because of the Op-Amp supply limitation and the output will be clipped as shown below. 
-![Waveform](Support\\OP-AMP_As_Inverting_Amplifier_LimitCrossed_Waveform.png)  
+![Waveform](Support/OP-AMP_As_Inverting_Amplifier_LimitCrossed_Waveform.png)  
 
 Here it can be seen clearly that input voltage is 5V sine wave, while the output waveform is clipped at +12V and -12V values.  
 
