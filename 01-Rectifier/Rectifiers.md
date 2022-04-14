@@ -4,15 +4,15 @@
 This type of rectifier only allows one half-cycle of an AC Voltage waveform to pass, blocking the other half-cycle.  
 They are used to convert AC voltage to DC voltage, and only require a single diode to construct.  
 The following is the schematic diagram of a Half Wave Rectifier.  
-![Schematic](Support\\FullWaveRectifier.png)  
+![Schematic](../Support/FullWaveRectifier.png)  
 
 Some important points.
 * The output waveform without filtering (capacitor) is as below
-  ![Half Wave Rectifier without Output Capacitor](Support\\HalfWaveRectifier_WaveformWoCap.png)  
+  ![Half Wave Rectifier without Output Capacitor](../Support/HalfWaveRectifier_WaveformWoCap.png)  
 * By lowering the capacitor value we can see the ripples in the output waveform
 * In LTSpice we have a feature known as step simulation, where we can simulate for different values of components
 * As can be seen in the below waveform, as the value of capacitor is increased the output becomes more flat or stable
-  ![Half Wave Rectifier without Output Capacitor](Support\\HalfWaveRectifier_Waveform.png)  
+  ![Half Wave Rectifier without Output Capacitor](../Support/HalfWaveRectifier_Waveform.png)  
 * The output is little less than the supplied input because of diode, with reduces the voltage by 0.7 V known has junction potential
 
 ### Full Wave Rectifier  
