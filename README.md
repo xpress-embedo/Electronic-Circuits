@@ -345,3 +345,25 @@ Output Impedance  = `R1 || R2 = 1/R1 + 1/R2 = (R1 * R2)/(R1 + R2) = (90k * 10k) 
 **Real World Capacitor**  
 TODO  
 
+TODO section
+
+_Exercise: Make a Low Pass Filter to Filter Out 100 KHz Noise with attenuation = -60dB (i.e. Gain of Vsen/Vin at 100KHz = 0.001)_  
+![RC Filter to Filter Out 100kHz Noise](resources/basics_freq_domain_001.png)  
+
+```
+Formula => GdB = 20 * log10(amplitude)
+-60 = 20*log10(Vsen/Vin)
+log10(Vsen/Vin) = -60/20 = -3
+Vsen/Vin = 10^(-3) = 0.001
+Hence, we need to make filter in such a way that at 100KHz the Vsen/Vin = 0.001
+```
+R2 and C1 are in parallel and impedance of `C1 = 1/sC1`. Hence the equivalent resistance can be found using the following formula.  
+![R2 and C1 Equivalent Impedance](resources/basics_freq_domain_002.png)  
+
+And then Gain's formula is as below.  
+![Gain Formula](resources/basics_freq_domain_003.png)  
+
+And then this formula can be converted into the canonical form.  
+![Canocial Formula](resources/basics_freq_domain_004.png)  
+
+TODO
