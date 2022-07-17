@@ -367,3 +367,18 @@ And then this formula can be converted into the canonical form.
 ![Canocial Formula](resources/basics_freq_domain_004.png)  
 
 TODO
+
+
+## AC Analysis
+* `.AC` performs a small signal AC Analysis Linearized about the DC Operating Point.  
+* `.AC` gives the Bode plot of a system.  
+* The small signal (linear) AC analysis of LTspice computes the AC complex node voltages as a function of frequency.  
+  * First, the DC operating point of the circuit is found.  
+  * Next, linearized small signal models for all of the non-linear devices in the circuit are found for this operating point.  
+  * Finally, using independent voltage and current sources as the driving signal, the resultant linearized circuit is solved in the frequency domain over the specified range of the frequency.  
+* This mode of analysis is useful for filters, networks, stability analysis and noise considerations.  
+```
+Syntax:
+.ac <oct,dec, lin> <Nsteps> <StartFreq> <EndFreq>  
+.ac list <FirstFreq> [<NextFreq> [<NextFreq> ....]]  
+```
