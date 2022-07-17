@@ -202,12 +202,12 @@ Measurement: third0.5
   * The data can be represented as a pair of time and value.  
     `Syntax: PWL <t1> <v1> <....> <tn> <vn>`  
 
-    ![PWL Data Point Example](resources/basics_pwl_001.png)  
+    ![PWL Data Point Example](resources/basics_pwl_001.PNG)  
 
   * Referring to a file (these are documented features).  
     `Syntax: PWL file=<name of the file>`  
 
-    ![PWL File Example](resources/basics_pwl_002.png)  
+    ![PWL File Example](resources/basics_pwl_002.PNG)  
 
 * **Repeating Values**  
   * A list of data points or a file reference can be repeated a fixed amount of time <n> or forever.  
