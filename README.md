@@ -314,4 +314,34 @@ output_impedance_at_V(vout):    9000    impedance
 Theoretical Calculations:  
 DC Voltage Gain   = `Vout/Vin = 1/10`  
 Input Impedance   = `R1 + R2 = 90k + 10k = 100k`  
-Output Impedance  = `R1 || R2 = 1/R1 + 1/R2 = (R1 * R2)/(R1 + R2) = (90k * 10k) * (10k + 90k) = 900k/100k = 9 k`  
+Output Impedance  = `R1 || R2 = 1/R1 + 1/R2 = (R1 * R2)/(R1 + R2) = (90k * 10k) * (10k + 90k) = 900k/100k = 9k`  
+
+## Fourier Theorem and Bode Plot  
+**Introduction of Frequency Domain Analysis**  
+* Previously all the analysis were time-domain analysis and DC analysis, now Frequency Domain Analysis will be started.  
+* The following keywords are most important and are interchangeable(in most cases).  
+  * Frequency Domain Analysis:  
+    The frequency domain refers to the analysis of mathematical functions or signals with respect to frequency, rather than time.  
+  * Small-Signal Analysis:  
+    Linearization of circuit characteristics at certain DC-bias point, with small-magnitude time-varying current and voltage as the variable.  
+  * AC Analysis  
+    AC means alternative-current signals in frequency domain.  
+
+* **Why AC Analysis is important?**  
+  * Because it gives a whole new dimension/insight of the system in frequency.  
+  * A system in response to a stimulus, showing the dynamics of a system.  
+  * For Example: inductor and capacitor are frequency dependent.  
+
+* **Why AC Analysis is important?**  
+  **Fourier Theorem**: A mathematical theorem stating that a Periodic Function f(x) which is reasonably continous may be expressed as the sum of a series of sine or cosine terms (called the Fourier series), each of which has a specific Amplitude and Phase Coefficients knows as Fourier Coefficients.   
+
+* **Introduction to Bode Plot**  
+  Assume we record the magnitude and phase change of the function of Vout/Vin, at each single frequency, we can make a Bode Plot.  
+  ```
+  Gdb = 20.log10(Vout/Vin)dB  
+  Gdb = 20.log10VoutdB - 20.log10VindB  
+  ```
+
+**Real World Capacitor**  
+TODO  
+

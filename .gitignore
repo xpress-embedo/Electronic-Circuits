@@ -3,3 +3,5 @@
 *.raw
 *.pdf
 *.net
+
+/Dont Commit/
