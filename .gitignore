@@ -1,7 +1,11 @@
+# LTspice Files
 *.log
 *.op.raw
 *.raw
 *.pdf
 *.net
+
+# Proteus Files
+*.workspace
 
 /Dont Commit/

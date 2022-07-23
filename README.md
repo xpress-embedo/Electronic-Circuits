@@ -382,3 +382,24 @@ Syntax:
 .ac <oct,dec, lin> <Nsteps> <StartFreq> <EndFreq>  
 .ac list <FirstFreq> [<NextFreq> [<NextFreq> ....]]  
 ```
+
+
+## Importing Third Party models into LTspice
+* Third Party SPICE models are described with two types of statements.
+  * `.MODEL` intrinsic SPICE devices like diodes and transistors.
+  * `.SUBCKT` which defines the component by a collection of circuitry of intrinsic SPICE devices
+
+### Using `.MODEL` into LTspice simulation
+There are 4 methods to do the same job. But before that we need to select a part which needs to be imported, here the selected part is `1N4007` diode, which is not available in LTspice by default.  
+The SPICE model of this diode can be found by clicking on [this link](https://www.onsemi.com/design/resources/technical-documentation?rpn=1N4007#ZHQ9TW9kZWxzO3N3PTFONDAwNzs=).  
+The following are the results.  
+![SPICE Models 1N4007](resources/basics_importing_model_001.PNG)  
+
+Out of these 4 models, `SPICE3` and `PSpice` models can be used with LTspice.  
+**NOTE: `PSpice` models has extension `lib` while `SPICE3` models has extension `SP3`.**  
+
+#### Method-1: Copy and Paste the `.model` statement into the simulation file
+#### Method-2: Use `.include` or `.inc`
+#### Method-3: Use `.lib`
+#### Method-4: Use `.lib` or `.inc` the url of the `.model` file
+Uniform resource Locator (URL), needs internet.
