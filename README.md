@@ -430,3 +430,40 @@ This means using the existing symbol of the Zener Diode in LTspice.
 ![Voltage Regulator with Custom Symbol](resources/basics_importing_model_003.png)  
 
 ### Hierarchy Model
+#### What is Hierarchy Model?
+Building block in graphical schematics to handle repeated circuitry or larger designs.  
+#### Advantages of Hierarchy
+* Hierarchy can be treated as fully functional "building block".  
+* Easily Handled in an abstract manner.  
+* Easily shared with others or run in another PC.  
+---
+## Probability and Worst Case Analysis
+There are three commonly used distributions in LTspice.  
+### Gaussian Distribution (aka Normal Distribution)
+* `gauss(x)`: A random number from Gaussian Distribution with a sigma of x (i.e. σ standard deviation) and zero mean (µ=0).  
+![Gaussian Distribution](resources/basics_probability_001.png)  
+
+### Uniform Distribution
+* `flat(x)`: A random number between -x and x with uniform distribution.  
+![Uniform Distribution](resources/basics_probability_002.png)  
+
+### Monte Carlo Simulation
+* `mc(x,y)`: A random number between x*(1+y) and x*(1-y) with uniform distribution, i.e. Monte Carlo of random probability distribution.  
+![Monte Carlo](resources/basics_probability_003.png)  
+
+
+*Example 1: Transient Simulation, Voltage Source in different probability distribution*  
+
+![Transient Simulation](resources/basics_probability_004.png)  
+
+![Transient Simulation](resources/basics_probability_005.png)  
+
+As can be seen in the above waveform, each distribution requires significant number of simulation times to get an estimation of min and max (for worst case conditions).  
+Apparently, Monte Carlo is the best option to simulate components tolerance.  
+
+**Plot Data at Each Iteration**
+* Goto View --> SPICE Error Logs (Shortcut is `CTRL+L`)  
+* Right Click Anywhere -> `Plot .step ed .meas data`  
+* And then window pops-up for plotting and here we can add traces, as shown below.  
+
+![Plot Data at each Iteration](resources/basics_probability_006.png)  
