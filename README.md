@@ -217,6 +217,14 @@ Measurement: third0.5
     `PWL REPEAT FOR 5 (0 1 1 1 2 2 3 1) ENDREPEAT`  
     `PWL REPEAT FOR 5 (file=<name of file>) ENDREPEAT`  
 
+* **Scaling Factors**
+There are two types of factor which is know to me as of now, the one is time scale factor and the another Value Scale factor.  
+```
+Example:
+PWM TIME_SCALE_FACTOR = 0.5 VALUE_SCALE_FACTOR=10 file="Gauss_Data.txt"
+This means that time is half now and voltage is increased by 10 times.  
+```
+
 ## Arbitrary Sources
 There are two arbitrary sources i.e. Arbitrary Voltage Source and Arbitrary Current Source.  
 ```
@@ -467,3 +475,6 @@ Apparently, Monte Carlo is the best option to simulate components tolerance.
 * And then window pops-up for plotting and here we can add traces, as shown below.  
 
 ![Plot Data at each Iteration](resources/basics_probability_006.png)  
+
+If we use `dc operating point` analysis, then it is much better to analyze dc points as we don't have to add iteration data to plots this is shown in another example.  
+
