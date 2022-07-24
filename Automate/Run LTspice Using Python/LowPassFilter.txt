@@ -1,0 +1,14 @@
+* D:\Projects\Electronic-Circuits\Automate\Run LTspice Using Python\LowPassFilter.asc
+V1 in 0 SINE(0 5 {freq} 0 0)
+R1 out in {res}
+C1 out 0 {cap}
+.tran 5m
+.param freq=1k
+.param res=1k cap=0.1u
+.options plotwinsize=0
+.save V(in) V(out)
+* Turn Off Raw-Data Compression
+* Limit the Quantity of Saved Data
+* RC Low Pass Filter of 1st Order
+.backanno
+.end
