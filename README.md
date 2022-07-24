@@ -456,8 +456,21 @@ There are three commonly used distributions in LTspice.
 ![Uniform Distribution](resources/basics_probability_002.png)  
 
 ### Monte Carlo Simulation
-* `mc(x,y)`: A random number between x*(1+y) and x*(1-y) with uniform distribution, i.e. Monte Carlo of random probability distribution.  
+* `mc(x,y)`: A random number between x*(1+y) (Maxima) and x*(1-y) (Minima) with uniform distribution, i.e. Monte Carlo of random probability distribution.  
 ![Monte Carlo](resources/basics_probability_003.png)  
+
+* **Why Monte Carlo Simulation is needed?**  
+  Because Non-Ideal component has impact in the circuit. We want to understand the circuit performance in the worst case.  
+
+* **What is Monte Carlo Statistic ?**  
+  Monte Carlo method provide the researcher with estimated solutions that address a variety of mathematical problems by performing certain statistical sampling experiments.  
+
+* **Using LTspice we can reach the following goals**
+  * To address the impact of component tolerances (resistors, capacitors, semiconductor gains, magnetic materials, IC, etc.)  
+  * To guarantee the circuit performance in mass production.  
+  * To understant the worst-case result using minimal simulation efforts.  
+
+TODO
 
 
 *Example 1: Transient Simulation, Voltage Source in different probability distribution*  
@@ -477,4 +490,38 @@ Apparently, Monte Carlo is the best option to simulate components tolerance.
 ![Plot Data at each Iteration](resources/basics_probability_006.png)  
 
 If we use `dc operating point` analysis, then it is much better to analyze dc points as we don't have to add iteration data to plots this is shown in another example.  
+
+---
+
+## Variable Resistor
+* Earlier we have been using fixed resistance values in all simulations.  
+* Also, we know how to step over resistance to run multiple simulations.  
+* Now in this section will have more discussion about `Variable Resistors` in LTspice.  
+
+```
+Symbol: RES, RES2
+Syntax: Rxxx n1 n2 <value> [tc=tc1, tc2, ...] [temp=<value>]
+The resistor supplies a simple linear resistance between nodes n1 and n2. A temperature dependence can be defined for each resistor instance with the parameter tc. The resistance, R, at will be.
+
+    R = R0 * (1. + dt*tc1 + dt**2*tc2 + dt**3*tc3 + ...)
+
+Where R0 is the resistance at the nominal temperature and dt is the difference between the resistor's temperature and the nominal temperature.
+```
+### Temperature Coefficient of Resistance (TCR)
+* A resistor's **Temperature Coefficient of Resistance (TCR)** tells how much its value changes as its temperature changes. It is usually express in `ppm/C (parts per million per degree Centigrade)` units.  
+```
+TCR = (R2-R1)*10^(-6)/(R1(T2-T1))   (ppm/C)
+R2 = TCR*R1(T2-T1)*10^(6) + R1
+R1 := Resistance and Room Temperature
+R2 := Resistance at Operating Temperature
+T1 := Is the Room Temperature in degree Centigrade
+T2 := Is the Operating Temperature in degree Centigrade
+```
+
+**Temperature Dependent Resistance**  
+![Resistance Variable with Temperature](resources/basics_variable_resistor_001.png)  
+
+**Time Dependent Resistance**  
+![Resistance Variation with Time](resources/basics_variable_resistor_002.png)  
+![Resistance Variation with Time](resources/basics_variable_resistor_003.png)  
 
