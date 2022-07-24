@@ -60,7 +60,7 @@ Example:
 .ic [V(in)=2] [V(out)=5] [V(vc)=1.8] [I(L1)=300m]
 Here Vin = 2V, Vout = 5V, Vvc = 1.8V and IL1 = 300mA at t=0 i.e. initial condition for the simulation
 ```
-
+---
 ## Parameter Sweeps (.step)
 * There are two ways to examine a circuit in LTspice by changing the value of a particular parameter.  
   * Manually enter each value and then resimuae the circuit to view the respone, or
@@ -128,6 +128,7 @@ And following is the waveform, of the above circuit with different sweeps.
 
 We can also view legends by right clicking on the waveform and then selecting view --> step legend.  
 
+---
 ## Measure (.meas) Average and Derivative
 * MEAS is the abbreviation of Measure, this is the command used to access the measurements made possible by all simulation calculations.  
 * The results is obtained in the file of SPICE Error Log (CTRL+L)  
@@ -195,7 +196,7 @@ Measurement: third0.5
      5  0         0
      6  0         0
 ```
-
+---
 ## Piecewise Linear Sources (PWL)
 * Picewise Liner Sources (PWL) functions are used to construct a waveform from a series of straight line segments connecting points defined by the user in LTspice (Linear Interpolation).
 * Each point is a pair of a time <tx> and a value <vx>, and there are two typical syntax.  
@@ -224,7 +225,7 @@ Example:
 PWM TIME_SCALE_FACTOR = 0.5 VALUE_SCALE_FACTOR=10 file="Gauss_Data.txt"
 This means that time is half now and voltage is increased by 10 times.  
 ```
-
+---
 ## Arbitrary Sources
 There are two arbitrary sources i.e. Arbitrary Voltage Source and Arbitrary Current Source.  
 ```
@@ -243,13 +244,15 @@ Syntax: Bnnn n001 n002 V=<expression> [ic=<value>]
 * Powerfull and versatile to support various operations, constants and functions.  
 TODO
 
-
+---
 ## DC Operating Points
 TODO  
 
+---
 ## DC Operating Points in Transient Simulation
 TODO  
 
+---
 ## DC Sweep(.dc) and Temperature
 * This performs a DC analysis while sweeping the DC value of an independent source (voltage, current and temperature).  
 * It is useful for computing the DC transfer function of a device, or plotting the current-voltage (I-V) characteristics curves of a device for model verification.  
@@ -259,7 +262,7 @@ TODO
   ```
   The <srcnam> is the source name, either an independent voltage or current source that is to be swept from <Vstart> to <Vstop> in <Vincr> step sizes. Here also the DC Sweep can be nested upto three values.  
 
-**Temperature in LTspice**  
+### Temperature in LTspice
 There are two keywords in LTspice for temperature one is `temp` and another is `tnom`.  
 * `temp` : Default Value is 27 deg C. This is the default temperature for the circuit element instances that don't specify temperature.  
   This is an archaic form (old fashioned) for the step command for the temperature. It performs the simulation for each temperature listed.  
@@ -293,6 +296,7 @@ In general for the above used diode the temperature coefficient is negative i.e.
 * Diodes can't be easily connected in parallel, because of their negative temperature coefficients: an imbalance in device characteristics may cause one diode to conduct more than the others. The diode becomes hotter, which causes it to conduct even more of the total current. In consequence, the current doesn't divide evently between the parallel devices, and the current rating of the devices may be exceeded.  
 * This is the root cause of thermal runway.  
 
+---
 ## Transfer Function (.TF): Find the DC Small Signal Transfer Function
 * This is an analysis mode that finds the DC Small Signal Transfer Function of a node voltage or branch current due to small variations of an independent source.  
 * Output is a dialog box giving the Low Frequency Gain and Input and Output Resistance of a Circuit.  
@@ -376,7 +380,7 @@ And then this formula can be converted into the canonical form.
 
 TODO
 
-
+---
 ## AC Analysis
 * `.AC` performs a small signal AC Analysis Linearized about the DC Operating Point.  
 * `.AC` gives the Bode plot of a system.  
@@ -391,7 +395,7 @@ Syntax:
 .ac list <FirstFreq> [<NextFreq> [<NextFreq> ....]]  
 ```
 
-
+---
 ## Importing Third Party models into LTspice
 * Third Party SPICE models are described with two types of statements.
   * `.MODEL` intrinsic SPICE devices like diodes and transistors.
@@ -492,7 +496,6 @@ Apparently, Monte Carlo is the best option to simulate components tolerance.
 If we use `dc operating point` analysis, then it is much better to analyze dc points as we don't have to add iteration data to plots this is shown in another example.  
 
 ---
-
 ## Variable Resistor
 * Earlier we have been using fixed resistance values in all simulations.  
 * Also, we know how to step over resistance to run multiple simulations.  
@@ -525,3 +528,8 @@ T2 := Is the Operating Temperature in degree Centigrade
 ![Resistance Variation with Time](resources/basics_variable_resistor_002.png)  
 ![Resistance Variation with Time](resources/basics_variable_resistor_003.png)  
 
+## Limitations of LTspice
+* If many components are used the simulation is slow and time-consuming.  
+* Plot Window may become extremely slow when data is large.  
+* It requires human efforts, mouse clicking for saving and plotting.  
+* Only support for upto 3 nestered steps over variables.  
