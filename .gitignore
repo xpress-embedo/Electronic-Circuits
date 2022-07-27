@@ -5,6 +5,9 @@
 *.pdf
 *.net
 
+# Python Files
+*.pyc
+
 # Proteus Files
 *.workspace
 
