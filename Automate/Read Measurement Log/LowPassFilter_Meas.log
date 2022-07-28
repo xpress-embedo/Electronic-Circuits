@@ -1,0 +1,30 @@
+Circuit: * D:\Projects\Electronic-Circuits\Automate\Read Measurement Log\LowPassFilter_Meas.asc
+
+.OP point found by inspection.
+
+vout_avg: AVG(v(out))=0.0751235 FROM 0 TO 0.003
+vout_max: MAX(v(out))=4.31 FROM 0 TO 0.003
+vout_min: MIN(v(out))=-4.23251 FROM 0 TO 0.003
+vout_at_time: v(out)=-2.25185 at 0.003
+vout_dev: D(v(out))=22607.7 at 0.002
+
+Measurement "vout_bad" FAIL'ed
+
+
+Date: Thu Jul 28 19:06:18 2022
+Total elapsed time: 0.092 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2082
+traniter = 2082
+tranpoints = 1042
+accept = 1042
+rejected = 0
+matrix size = 3
+fillins = 0
+solver = Normal
+Matrix Compiler1: 50 bytes object code size  0.0/0.0/[0.0]
+Matrix Compiler2:      15 opcodes  0.0/[0.0]/0.0
+
