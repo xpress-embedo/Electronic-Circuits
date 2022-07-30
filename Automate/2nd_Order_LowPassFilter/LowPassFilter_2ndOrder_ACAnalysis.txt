@@ -1,0 +1,14 @@
+* D:\Projects\Electronic-Circuits\Automate\2nd_Order_LowPassFilter\LowPassFilter_2ndOrder_ACAnalysis.asc
+V1 in 0 SINE(0 5 {freq} 0 0)
+R1 N001 in {res1}
+C1 N001 0 {cap1}
+R2 out N001 {res2}
+C2 out 0 {cap2}
+.tran 5m
+.param freq=1k
+.param res1=1k cap1=0.1u res2=1k cap2=0.1u
+.options plotwinsize=0
+* Turn Off Raw-Data Compression
+* RC Low Pass Filter of 2nd Order
+.backanno
+.end
