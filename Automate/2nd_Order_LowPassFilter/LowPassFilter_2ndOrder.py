@@ -60,7 +60,7 @@ for r1 in list_R1:
                     file.write(temp_data);
                 
                 idx = idx+1;
-                print ('To run text files #:', idx, 'over total 16 has a file name:', new_filename);
+                print ('Running Text File #: ',idx,' out of 16 with filename: ', new_filename, sep='');
                 # run LTspice in the for loop, this will generate *.raw file
                 subprocess.call(dir_XVIIx64 + "\XVIIx64.exe -b " + 'SimFolder/'+new_filename_txt);
 
@@ -94,7 +94,7 @@ for each_file in list_all:
         # Close Figures
         plt.close('all');
         idx = idx+1;
-        print('Saving Figures #: ', idx, 'over total has a file name:', new_filename);
+        print('Saving Figure #: ', idx, 'out of 16, with a file name: ', each_file, sep='');
         
 
 end_time = time.time();
